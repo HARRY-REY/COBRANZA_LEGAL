@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('php/conexion_be.php');
 
     if(!isset($_SESSION['usuario']))
     {
@@ -13,6 +14,10 @@
             die();
     }
             //session_destroy();
+    $usuario = $_SESSION['usuario'];
+    $sql = "SELECT correo, nombre_completo FROM usuarios WHERE correo='$usuario' ";
+    $resultado = $conexion -> query($sql);
+    $row = $resultado -> fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +29,10 @@
     <title>Bienvenida</title>
 </head>
 <body>
-    <h1>¡Bienvenido!</h1>
+    <h1>¡Bienvenido
+    <?php 
+        echo utf8_decode($row['nombre_completo']);
+    ?>!</h1>
     <a href="php/cerrar_sesion.php">Cerrar Sesión</a>
 </body>
 </html>
