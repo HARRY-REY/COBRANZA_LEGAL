@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 7% 93%;
 }
+
 html
 {
     box-sizing: border-box;
@@ -85,3 +86,10 @@ header
 }
 
 /* LO DE ATRAS ES EL MENÚ */
+
+#all
+{
+    width: 100%;
+    height: 600px;
+    background: #777;
+}
