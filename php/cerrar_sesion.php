@@ -5,6 +5,6 @@
     echo '
     <script>
     alert("Sesión finalizada");
-    window.location="../index.php"
+    window.location="../home.html"
     </script>'
 ?>
